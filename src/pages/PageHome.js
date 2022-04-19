@@ -56,14 +56,15 @@ function PageHome() {
                     </section>
                     {/* Intro */}
                     { ( restData.acf.intro && restData.acf.intro_content ) && 
-                                <section>
-                                    <h2>{restData.acf.intro}</h2>
-                                        {restData.acf.intro_content.map((onePoint, i) => 
-                                            <p key={i}>{onePoint.intro_point}</p>
-                                        )}
-                                    <Button url='about' btnText="Learn More" /> 
-                                </section>
-                            }
+                        <section>
+                            <h2>{restData.acf.intro}</h2>
+                                {restData.acf.intro_content.map((onePoint, i) => 
+                                    <p key={i}>{onePoint.intro_point}</p>
+                                )}
+                            <Button url='about' btnText="Learn More" /> 
+                        </section>
+                    }
+                    <p>test</p>
                 </section>
                <Footer />
             </div>
