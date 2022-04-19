@@ -64,7 +64,7 @@ function PageHome() {
                             <Button url='about' btnText="Learn More" /> 
                         </section>
                     }
-                    <p>test</p>
+                    
                 </section>
                <Footer />
             </div>
