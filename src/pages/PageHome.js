@@ -5,6 +5,8 @@ import "@reach/skip-nav/styles.css";
 import classes from 'classnames';
 import styles from '../styles/pageHome.module.scss';
 import NavMenu from '../components/NavMenu.js';
+import Footer from '../components/Footer.js';
+import Button from '../components/Button.js';
 
 
 
@@ -52,9 +54,18 @@ function PageHome() {
                             <img src={restData.acf.image.url} alt={restData.acf.image.alt} />
                         </div>
                     </section>
-                    
+                    {/* Intro */}
+                    { ( restData.acf.intro && restData.acf.intro_content ) && 
+                                <section>
+                                    <h2>{restData.acf.intro}</h2>
+                                        {restData.acf.intro_content.map((onePoint, i) => 
+                                            <p key={i}>{onePoint.intro_point}</p>
+                                        )}
+                                    <Button url='about' btnText="Learn More" /> 
+                                </section>
+                            }
                 </section>
-               
+               <Footer />
             </div>
         );
     }
