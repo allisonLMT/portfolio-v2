@@ -1,0 +1,64 @@
+@use 'mixins' as *;
+@use '_variables' as *;
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+div#root {
+    height: 100%;
+}
+.pageHomeContainer {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    max-width: 100rem;
+    height: 100%;
+    
+}
+.container {  
+   
+    max-height: calc(100vh - 5rem);
+    margin-top: 5rem;
+    
+
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    //height: calc(100vh - 5rem);
+    width: 100%;
+    margin: 0 20px;
+    //border: 1px solid blue;
+
+    @media (min-width: 600px) {
+        width: 50%;
+    }
+    h2 {
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+}
+
+.imageWrap {
+    background-color: red;
+    height: 45vh;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    object-fit: cover;
+}
+
+.overlay {
+    background-color: aqua;
+    opacity: 0.5;
+}

@@ -1,0 +1,59 @@
+@use '_mixins' as *;
+
+
+.accordionHeader {
+    @include flex-vert-center-hor-space;
+    border-bottom: 0.0625rem solid #222222;
+    
+    padding: 0 25px;
+    height: 4.0625rem;
+    max-width: 75rem;
+    margin: 0 auto;
+
+    svg {
+        fill: black;
+    }
+}
+
+div.accordionHeader:hover,
+.headerActive {
+    background-color: #222222;
+    color: white;
+
+    svg {
+        fill: white;
+    }
+}
+
+.accordions:first-child {
+    div.accordionHeader {
+    border-top: 0.0625rem solid #222222;
+    }
+}
+
+.accordionContent {
+    display: none;
+    padding: 1.875rem 1.25rem;
+    max-width: 75rem;
+    margin: 0 auto;
+
+    section {
+        margin: 0 auto;
+        max-width: 50rem;
+    }
+    ul {
+        margin: 0 auto;
+        
+    }
+    li {
+        padding: 0.625rem 0;
+    }
+    img {
+        padding: 1.5625rem 0 0;
+    }
+}
+
+.open {
+    display: block;
+    border-bottom: 0.0625rem solid #222222;
+}

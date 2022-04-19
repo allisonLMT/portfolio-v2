@@ -1,0 +1,53 @@
+@use '_mixins' as *;
+
+img.projectCoverImage {
+    display: block;
+    width: 18.75rem;
+    height: 18.75rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    filter: drop-shadow(0.125rem 0.125rem 0.125rem darkgrey);
+
+    @media(min-width: 43.75rem) {
+        width: 28.125rem;
+        height: 28.125rem;
+    }
+
+    @media(min-width: 62.5rem) {
+        width: 37.5rem;
+        height: 37.5rem;
+    }
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1.5625rem;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.marginWrap {
+    max-width: 75rem;
+    margin: 0 auto;
+
+    h2.featureHeader {
+        padding-left: 1.25rem;
+    }
+}
+
+.projectInfo {
+    margin: 0 auto;
+    padding: 1.25rem;
+    min-width: 18.75rem;
+    max-width: 37.5rem;
+}
+
+.infoWrap {
+
+    @media (min-width: 50rem) {
+        display: flex;
+        padding: 1.875rem 0;
+    }
+}

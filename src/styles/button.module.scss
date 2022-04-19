@@ -1,0 +1,20 @@
+@use 'mixins' as *;
+
+.button {
+   @include flex-center-vert-hor;
+    filter: drop-shadow(0.125rem 0.125rem 0.0938rem darkgrey);
+
+    &:hover,
+    &:active {
+        transform: scale(0.95, 0.95);
+    }
+
+    a{
+        margin: 0.625rem;
+        padding: 0.625rem 0.9375rem;
+        border-radius: 0.1875rem;
+        color: white;
+        background-color: black;
+        text-decoration: none;
+    }
+};

@@ -1,0 +1,12 @@
+@use '_mixins' as *;
+
+.goHome {
+    @include flex-center-vert-hor;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    width: 100%;
+    a {
+        text-decoration: underline;
+        width: 100%;
+    }
+}

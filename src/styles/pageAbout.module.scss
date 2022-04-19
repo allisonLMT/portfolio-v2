@@ -1,0 +1,54 @@
+.aboutWrap {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+
+    img {
+        display: flex;
+        justify-content: center;
+        width: 300px;
+        height: auto;
+        margin-bottom: 1.5625rem;
+        border-radius: 0.1875rem;
+        filter: drop-shadow(0.1875rem 0.1875rem 0.3125rem #44444475);
+
+        @media (min-width: 56.25rem) {
+            margin: 0 1.5625rem;
+            width: 400px;
+        }
+    }
+    
+}
+
+.aboutText {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 1.25rem;
+    max-width: 600px;
+
+    section {
+        width: 100%;
+    }
+}
+
+.fadeInColor {
+    animation: fade-in ease 4s;
+}
+@keyframes fade-in{
+    0% {
+        opacity: 0;
+        filter: grayscale(100%);
+    }
+    50% {
+        opacity: 1;
+        filter: grayscale(100%)
+    }
+    100% {
+        opacity: 1;
+        filter: grayscale(0%);
+    }
+}

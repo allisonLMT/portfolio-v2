@@ -1,0 +1,26 @@
+@use '_mixins' as *;
+
+.pageNav {
+    @include flex-vert-center-hor-space;
+    padding: 3.125rem 0.9375rem 1.5625rem;
+    margin: 0 auto;
+    max-width: 75rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+    img {
+        height: 1.5625rem;
+        width: 1.5625rem;
+    }
+}
+
+.previous img {
+    margin-right: 0.625rem;
+}
+
+.next img {
+    margin-left: 0.625rem;
+}

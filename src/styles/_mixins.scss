@@ -1,0 +1,31 @@
+// Mixins for creating a flex row of
+// and evenly spacing out the
+// elements along the row
+@mixin flex-layout-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+//uses flex properties to center vertically and horizontally
+@mixin flex-center-vert-hor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+//uses flex to center vertically, with horizontal space between
+@mixin flex-vert-center-hor-space {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-wrap-center-space-btwn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+}

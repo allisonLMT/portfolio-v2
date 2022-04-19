@@ -1,0 +1,64 @@
+@use '_variables' as *;
+
+.featureCard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: 75rem;
+    background-color: $accentGrey;
+    filter: drop-shadow(0.125rem 0.125rem 0.125rem darkgrey);
+    padding: 1.25rem;
+    margin: 0.625rem 1.25rem;
+    border-radius: 0.4375rem;
+   
+    @media (min-width: 62.5rem) {
+        flex-direction: row;
+        padding: 2.5rem 1.875rem;
+        margin: 1.5625rem 1.25rem;
+    }
+    @media (min-width: 78.125rem) {
+        margin: 1.5625rem 0;
+    }
+
+    h4 {
+        margin-top: 0;
+    }
+}
+
+.featureLeft {
+    margin: 0 auto;
+    max-width: 37.5rem;
+}
+
+img.featureImage {
+    display: block;
+    max-width: 100%;
+    
+    @media (min-width: 50rem) {
+        display: none;
+    }
+}
+
+.featureVideo {
+    display: none;
+    max-width: 37.5rem;
+    
+    @media (min-width: 50rem) {
+        display: block;
+    }
+}
+
+.featureContent {
+    max-width: 37.5rem;
+    margin: 1.25rem auto;
+
+    @media (min-width: 62.5rem) {
+        width: 18.75rem;
+        padding: 0 1.25rem;
+    }
+
+    @media (min-width: 68.75rem) {
+        width: 25rem;
+    }
+}
