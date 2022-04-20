@@ -25,6 +25,12 @@ div#root {
 
 }
 //Cover Image and Intro Text Section
+.coverWrap {
+    display: flex;
+    @media (min-width: 800px) {
+        flex-direction: row;
+    }
+}
 .left {
     display: flex;
     justify-content: center;
@@ -33,15 +39,19 @@ div#root {
     //height: calc(100vh - 5rem);
     //width: 100%;
     margin: 0 20px;
-    border: 1px solid blue;
+    //border: 1px solid blue;
 
     @media (min-width: 600px) {
         width: 50%;
+        height: 80vh;
     }
     h2 {
         font-size: 45px;
         text-transform: uppercase;
     }
+}
+.name {
+    color: #007AB8;
 }
 
 .right {
@@ -49,18 +59,36 @@ div#root {
     justify-content: center;
     align-items: center;
     height: 45vh;
+    //border: 1px solid goldenrod;
+    @media (min-width: 800px) {
+        height: 80vh;
+
+    }
 }
 
 .imageWrap {
-    background-color: red;
+    //background-color: red;
     object-fit: cover;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-
+    width: 100%;
+    height: 100%;
+   
 
     img {
         display: block;
         width: 250px;
         height: auto;
+        opacity: 0.8;
+        
+        @media (min-width: 800px) {
+            width: auto;
+            height: 80vh;
+    
+        }
+    }
+    .overlay {
+        background-color: rgb(0, 122, 184, 0.5);
+        z-index: 2;
     }
 
     @media (min-width: 800px) {
@@ -72,8 +100,10 @@ div#root {
 
 //About Section
 .intro {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid green;
+    //border: 1px solid green;
 }
 //End of About Section
 
@@ -98,7 +128,7 @@ div#root {
     display: block;
     text-decoration: none;
     color: black;
-    background-color: $accentYellow;
+    background-color: $accentLightBlue;
     padding: 1.25rem 0;
     max-width: 18.75rem;
     filter: drop-shadow(0.125rem 0.125rem 0.125rem darkgrey)

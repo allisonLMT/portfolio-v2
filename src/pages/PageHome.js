@@ -52,26 +52,27 @@ function PageHome() {
                 <NavMenu page={'home'}/>
                 <SkipNavContent />
                 <section className='content-wrap' >
-                    <section className={styles.left}>
-                        <div className={styles.text}>
-                            <p className={styles.firstLine}>hello, my name is...</p>
-                            <h2>Allison Tredwell</h2>
-                            <p>I'm a <strong>Front End Web Developer</strong> </p>
-                            <p>based in Vancouver, BC.</p>
-                        </div>
-                        
-                    </section>
-                    <section className={styles.right}>
-                        <div className={classes(styles.imageWrap, styles.overlay)}>
-                            { restData.acf.cover_image.url &&
-                                <img src={restData.acf.cover_image.url} alt={restData.acf.cover_image.alt} />
-                            }
-                        </div>
+                    <section className={styles.coverWrap}>
+                        <section className={styles.left}>
+                            <div className={styles.text}>
+                                <p className={styles.firstLine}>hello, my name is...</p>
+                                <h2 className={styles.name}>Allison Tredwell</h2>
+                                <p>I'm a <strong>Front End Web Developer</strong> </p>
+                                <p>based in Vancouver, BC.</p>
+                            </div>
+                        </section>
+                        <section className={styles.right}>
+                            <div className={classes(styles.imageWrap, styles.overlay)}>
+                                { restData.acf.cover_image.url &&
+                                    <img src={restData.acf.cover_image.url} alt={restData.acf.cover_image.alt} />
+                                }
+                            </div>
+                        </section>
                     </section>
                     {/* Intro */}
                     { ( restData.acf.intro && restData.acf.intro_content ) && 
                         <section className={styles.intro}>
-                            <h2>{restData.acf.intro}</h2>
+                            <h1>{restData.acf.intro}</h1>
                                 {restData.acf.intro_content.map((onePoint, i) => 
                                     <p key={i}>{onePoint.intro_point}</p>
                                 )}
