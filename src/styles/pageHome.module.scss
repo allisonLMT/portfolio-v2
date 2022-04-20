@@ -24,16 +24,16 @@ div#root {
     
 
 }
-
+//Cover Image and Intro Text Section
 .left {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45vh;
+    height: 60vh;
     //height: calc(100vh - 5rem);
-    width: 100%;
+    //width: 100%;
     margin: 0 20px;
-    //border: 1px solid blue;
+    border: 1px solid blue;
 
     @media (min-width: 600px) {
         width: 50%;
@@ -53,13 +53,90 @@ div#root {
 
 .imageWrap {
     background-color: red;
-    height: 45vh;
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
     object-fit: cover;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+
+
+    img {
+        display: block;
+        width: 250px;
+        height: auto;
+    }
+
+    @media (min-width: 800px) {
+        
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    }
+}
+//End of Cover Image and Intro Text Section
+
+//About Section
+.intro {
+    padding: 20px;
+    border: 1px solid green;
+}
+//End of About Section
+
+// Contact Section
+.contactWrap {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+
+    h2 {
+        margin: 4.375rem auto 0;
+        max-width: 25rem;
+        text-align: center;
+        line-height: 1.8rem;
+    }
+    p {
+        margin: 0.3125rem auto;
+        text-align: center;
+    }
 }
 
-.overlay {
-    background-color: aqua;
-    opacity: 0.5;
+.accent {
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: $accentYellow;
+    padding: 1.25rem 0;
+    max-width: 18.75rem;
+    filter: drop-shadow(0.125rem 0.125rem 0.125rem darkgrey)
 }
 
+.smalltext {
+    margin: 3.125rem auto;
+}
+
+    
+button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: white;
+    img {
+        padding-left: 0.625rem;
+    }
+}
+
+section.email {
+    display: inline-block;
+    margin-left: 50%;
+    //adjusts by half the width of the div, to center it
+    transform: translateX(-50%);
+    margin-top: 2.5rem;
+}
+
+section.email + p.popup {
+    display: none;
+    background: #ACCEE2;
+    max-width: 9.375rem;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+}
+
+section.email:hover + p.popup {
+    display: block;
+    color: black;
+}
+// End of Contact Section

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 //import { Link } from 'react-router-dom';
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
+import Clipboard from 'react-clipboard.js';
+import copy from '../images/icons/copy.svg';
 import classes from 'classnames';
 import styles from '../styles/pageHome.module.scss';
 import NavMenu from '../components/NavMenu.js';
@@ -14,7 +16,7 @@ function PageHome() {
 
     window.scrollTo(0, 0);
 
-    const restPath = 'https://atredwell.com/wordpress-portfolio/wp-json/wp/v2/pages/11?acf_format=standard';
+    const restPath = 'https://atredwell.com/wordpress-portfolio-v2/wp-json/wp/v2/pages/10?acf_format=standard';
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -31,6 +33,16 @@ function PageHome() {
         }
         fetchData()
     }, [restPath])
+
+    const [isCopied, setCopiedStatus] = useState(false);
+
+    function handleToggle() {
+        setCopiedStatus(true);
+        //after 1.5 seconds, reset the status to false
+        setTimeout(() => {
+            setCopiedStatus(false);
+        }, 1500);
+    }
 
     
     if ( isLoaded ) {
@@ -51,12 +63,14 @@ function PageHome() {
                     </section>
                     <section className={styles.right}>
                         <div className={classes(styles.imageWrap, styles.overlay)}>
-                            <img src={restData.acf.image.url} alt={restData.acf.image.alt} />
+                            { restData.acf.cover_image.url &&
+                                <img src={restData.acf.cover_image.url} alt={restData.acf.cover_image.alt} />
+                            }
                         </div>
                     </section>
                     {/* Intro */}
                     { ( restData.acf.intro && restData.acf.intro_content ) && 
-                        <section>
+                        <section className={styles.intro}>
                             <h2>{restData.acf.intro}</h2>
                                 {restData.acf.intro_content.map((onePoint, i) => 
                                     <p key={i}>{onePoint.intro_point}</p>
@@ -64,8 +78,20 @@ function PageHome() {
                             <Button url='about' btnText="Learn More" /> 
                         </section>
                     }
-                    <section id='contact'>
-                        <h2>contact</h2>
+                    <section className={classes('content-wrap', styles.contactWrap)} id='contact' >
+                        <h1>Contact</h1>
+                        <h2>{restData.acf.contact_content[0].line}</h2>
+                        <a href="mailto: allison.tredwell@gmail.com" className={classes(styles.smalltext, styles.accent)}>
+                            <p>{restData.acf.contact_content[1].line}</p>
+                            <p>{restData.acf.contact_content[2].line}</p>
+                        </a>
+                        <section className={styles.email} onClick={() => { handleToggle() }}>
+                            <Clipboard data-clipboard-text="allison.tredwell@gmail.com" >
+                                allison.tredwell@gmail.com
+                                <img src={copy} alt="copy this email address" className={styles.copyEmail}/>
+                            </Clipboard>
+                        </section>
+                        <p className={styles.popup}>{!isCopied ? "Copy Email" : "Copied!"}</p>
                     </section>
                 </section>
                <Footer />
