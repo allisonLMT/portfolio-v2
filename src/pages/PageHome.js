@@ -15,8 +15,6 @@ import Button from '../components/Button.js';
 
 function PageHome() {
 
-    //window.scrollTo(0, 0);
-
     const restPath = 'https://atredwell.com/wordpress-portfolio-v2/wp-json/wp/v2/pages/10?acf_format=standard';
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -58,13 +56,29 @@ function PageHome() {
 
     // Click to Copy
     const [isCopied, setCopiedStatus] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
 
     function handleToggle() {
+        window.scrollTo(0, scrollPosition);
         setCopiedStatus(true);
         //after 1.5 seconds, reset the status to false
         setTimeout(() => {
             setCopiedStatus(false);
         }, 1500);
+        
     }
 
     
@@ -131,7 +145,7 @@ function PageHome() {
                         <p className={styles.popup}>{!isCopied ? "Copy Email" : "Copied!"}</p>
                     </section>
                 </section>
-               <Footer />
+               <Footer page='home' />
             </div>
         );
     }
