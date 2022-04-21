@@ -15,7 +15,7 @@
         border-radius: 0.1875rem;
         filter: drop-shadow(0.1875rem 0.1875rem 0.3125rem darkgrey);
 
-        transform: scaleX(-1);
+        //
         
         @media (min-width: 56.25rem) {
             margin: 0 1.5625rem;
@@ -24,6 +24,7 @@
         }
         @media (min-width: 1092px) {
             //clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+            transform: scaleX(-1);
             clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
         }
     }
@@ -52,10 +53,30 @@
     }
     50% {
         opacity: 1;
-        filter: grayscale(100%)
+        filter: grayscale(100%) drop-shadow(0.1875rem 0.1875rem 0.3125rem darkgrey);
     }
     100% {
         opacity: 1;
-        filter: grayscale(0%);
+        filter: grayscale(0%) drop-shadow(0.1875rem 0.1875rem 0.3125rem darkgrey);
+    }
+}
+
+@media (min-width: 1092px) {
+    .fadeInColor {
+        animation: fade-in ease 4s;
+    }
+    @keyframes fade-in{
+        0% {
+            opacity: 0;
+            filter: grayscale(100%);
+        }
+        50% {
+            opacity: 1;
+            filter: grayscale(100%);
+        }
+        100% {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
     }
 }
