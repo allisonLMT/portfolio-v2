@@ -7,6 +7,7 @@ import copy from '../images/icons/copy.svg';
 import classes from 'classnames';
 import styles from '../styles/pageHome.module.scss';
 import NavMenu from '../components/NavMenu.js';
+import ProjectCard from '../components/ProjectCard';
 import Footer from '../components/Footer.js';
 import Button from '../components/Button.js';
 
@@ -20,7 +21,14 @@ function PageHome() {
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
+    const projectsPath = 'https://atredwell.com/wordpress-portfolio/wp-json/wp/v2/portfolio-project?acf_format=standard';
+    const [projectsData , setProjects] = useState([])
+    const [projectsLoaded, setProjectsStatus] = useState(false)
+   
+
+    
     useEffect(() => {
+        // Fetch all data (except portfolio)
         const fetchData = async () => {
             const response = await fetch(restPath);
             if ( response.ok ) {
@@ -32,8 +40,22 @@ function PageHome() {
             }
         }
         fetchData()
-    }, [restPath])
+        // Fetch Portfolio data
+        const fetchProjects = async () => {
+            const response = await fetch(projectsPath);
+            if ( response.ok ) {
+                const data = await response.json();
+                setProjects(data);
+                setProjectsStatus(true);
+            } else {
+                setProjectsStatus(false);
+            }
+        }
+        fetchProjects()
+    }, [restPath, projectsPath])
 
+
+    // Click to Copy
     const [isCopied, setCopiedStatus] = useState(false);
 
     function handleToggle() {
@@ -45,7 +67,7 @@ function PageHome() {
     }
 
     
-    if ( isLoaded ) {
+    if ( isLoaded && projectsLoaded ) {
         return(
             <div className='page-container' >
                 <SkipNavLink />
@@ -79,6 +101,18 @@ function PageHome() {
                             <Button url='about' btnText="Learn More" /> 
                         </section>
                     }
+                    {/* Recent Projects */}
+                    <section className={classes('content-wrap')} >
+                        <h1>Recent Projects</h1>
+                        <div className={styles.projects}>
+                            {projectsData.map((eachProject, i) =>
+                                <ProjectCard key={eachProject.id} project={projectsData[i]} />
+                            )}
+                        </div>
+                    </section>
+
+
+                    {/* Contact */}
                     <section className={classes('content-wrap', styles.contactWrap)} id='contact' >
                         <h1>Contact</h1>
                         <h2>{restData.acf.contact_content[0].line}</h2>
