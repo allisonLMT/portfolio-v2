@@ -15,10 +15,9 @@ div#root {
     overflow: hidden;
     max-width: 100rem;
     height: 100%;
-    
 }
+
 .container {  
-   
     max-height: calc(100vh - 5rem);
     margin-top: 5rem;
 }
@@ -43,8 +42,7 @@ div#root {
     align-items: center;
     height: 60vh;
     width: 100%;
-    
-    //border: 1px solid blue;
+
 
     @media (min-width: 600px) {
         width: 60%;
@@ -72,10 +70,9 @@ div#root {
     display: flex;
     justify-content: right;
     align-items: center;
-    
     height: 50vh;
     width: 100%;
-    //border: 1px solid goldenrod;
+    
     @media (min-width: 600px) {
         height: 80vh;
         
@@ -84,9 +81,6 @@ div#root {
 }
 
 .imageWrap {
-    //object-fit: cover;
-    //border: 1px solid green;
-   //margin: 0 auto;
 
     img {
         display: block;
@@ -100,7 +94,6 @@ div#root {
         @media (min-width: 600px) {
             width: auto;
             height: 80vh;
-    
         }
        
     }

@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
 import classes from 'classnames';
-//import Button from '../components/Button';
 import NavMenu from '../components/NavMenu'
 import Footer from '../components/Footer';
 import styles from '../styles/pageAbout.module.scss';
