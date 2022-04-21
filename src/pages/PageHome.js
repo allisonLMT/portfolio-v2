@@ -18,7 +18,7 @@ function PageHome() {
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
-    const projectsPath = 'https://atredwell.com/wordpress-portfolio/wp-json/wp/v2/portfolio-project?acf_format=standard';
+    const projectsPath = 'https://atredwell.com/wordpress-portfolio-v2/wp-json/wp/v2/portfolio-project?acf_format=standard';
     const [projectsData , setProjects] = useState([])
     const [projectsLoaded, setProjectsStatus] = useState(false)
     
