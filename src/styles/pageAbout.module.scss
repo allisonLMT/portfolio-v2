@@ -13,11 +13,16 @@
         height: auto;
         margin-bottom: 1.5625rem;
         border-radius: 0.1875rem;
-        filter: drop-shadow(0.1875rem 0.1875rem 0.3125rem #44444475);
-
+        //filter: drop-shadow(0.1875rem 0.1875rem 0.3125rem #44444475);
+        
         @media (min-width: 56.25rem) {
             margin: 0 1.5625rem;
             width: 400px;
+           
+
+        }
+        @media (min-width: 1092px) {
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
         }
     }
     
