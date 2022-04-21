@@ -45,11 +45,14 @@ function PageHome() {
             const response = await fetch(projectsPath);
             if ( response.ok ) {
                 const data = await response.json();
-                setProjects(data);
+                 //splice to show most recent 2 projects
+                const splicedData = data.splice(0, 2);
+                setProjects(splicedData);
                 setProjectsStatus(true);
             } else {
                 setProjectsStatus(false);
             }
+
         }
         fetchProjects()
     }, [restPath, projectsPath])
@@ -102,18 +105,19 @@ function PageHome() {
                         </section>
                     }
                     {/* Recent Projects */}
-                    <section className={classes('content-wrap')} >
+                    <section>
                         <h1>Recent Projects</h1>
                         <div className={styles.projects}>
                             {projectsData.map((eachProject, i) =>
                                 <ProjectCard key={eachProject.id} project={projectsData[i]} />
                             )}
                         </div>
+                        <Button url='portfolio' btnText="View All Projects"/>
                     </section>
 
 
                     {/* Contact */}
-                    <section className={classes('content-wrap', styles.contactWrap)} id='contact' >
+                    <section className={classes(styles.contactWrap)} id='contact' >
                         <h1>Contact</h1>
                         <h2>{restData.acf.contact_content[0].line}</h2>
                         <a href="mailto: allison.tredwell@gmail.com" className={classes(styles.smalltext, styles.accent)}>

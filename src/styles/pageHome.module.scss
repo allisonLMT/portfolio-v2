@@ -21,14 +21,16 @@ div#root {
    
     max-height: calc(100vh - 5rem);
     margin-top: 5rem;
-    
-
 }
 //Cover Image and Intro Text Section
 .coverWrap {
     display: flex;
-    @media (min-width: 800px) {
+    flex-wrap: wrap;
+    max-width: 1200px;
+    
+    @media (min-width: 600px) {
         flex-direction: row;
+        justify-content: space-between;
     }
 }
 .left {
@@ -37,12 +39,13 @@ div#root {
     align-items: center;
     height: 60vh;
     //height: calc(100vh - 5rem);
-    //width: 100%;
+    width: 100vw;
     margin: 0 20px;
     //border: 1px solid blue;
 
     @media (min-width: 600px) {
-        width: 50%;
+        width: 50vw;
+        
         height: 80vh;
     }
     h2 {
@@ -55,34 +58,42 @@ div#root {
 }
 
 .right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45vh;
-    //border: 1px solid goldenrod;
-    @media (min-width: 800px) {
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+    
+    height: 50vh;
+    width: 100vw;
+    border: 1px solid goldenrod;
+    @media (min-width: 600px) {
         height: 80vh;
-
+        
+        width: 50vw;
     }
 }
 
 .imageWrap {
     //background-color: red;
     object-fit: cover;
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    width: 100%;
-    height: 100%;
     
+    //width: 100%;
+    //height: 100%;
+    
+    border: 1px solid green;
    
 
     img {
         display: block;
         width: 250px;
         height: auto;
+        
         opacity: 0.85;
         z-index: 1;
+        margin: 0 0 0 auto;
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        //border: 1px solid pink;
         
-        @media (min-width: 800px) {
+        @media (min-width: 600px) {
             width: auto;
             height: 80vh;
     
@@ -93,10 +104,7 @@ div#root {
         z-index: 2;
     }
 
-    @media (min-width: 800px) {
-        
-        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    }
+ 
 }
 //End of Cover Image and Intro Text Section
 
@@ -109,10 +117,19 @@ div#root {
 }
 //End of About Section
 
+// Recent Projects Section
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+//End of Recent Projects Sections
+
+
 // Contact Section
 .contactWrap {
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
+    
+    margin: 0 1.25rem 5rem;
 
     h2 {
         margin: 4.375rem auto 0;
@@ -139,8 +156,7 @@ div#root {
 .smalltext {
     margin: 3.125rem auto;
 }
-
-    
+  
 button {
     display: flex;
     align-items: center;
@@ -161,7 +177,7 @@ section.email {
 
 section.email + p.popup {
     display: none;
-    background: #ACCEE2;
+    background: $accentLightBlue;
     max-width: 9.375rem;
     padding: 0.625rem;
     border-radius: 0.3125rem;

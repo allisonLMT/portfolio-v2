@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
             <section className={styles.projectInfo}>
                 <h2>{project.title.rendered}</h2>
                 <p>{project.acf.one_liner}</p>
-                <Button url={`/project/${project.id}`} btnText="Learn More" />
+                <Button url={`/project/${project.id}`} btnText="More Info" />
             </section>
         </article>
     );
