@@ -84,12 +84,12 @@ function PageHome() {
     
     if ( isLoaded && projectsLoaded ) {
         return(
-            <div className='page-container' >
+            <div className='page-container' id='top'>
                 <SkipNavLink />
                 <NavMenu page={'home'}/>
                 <SkipNavContent />
                 <section className='content-wrap' >
-                    <section className={styles.coverWrap} id='top'>
+                    <section className={styles.coverWrap} >
                         <section className={styles.left}>
                             <div className={styles.text}>
                                 <p className={styles.firstLine}>hello, my name is...</p>

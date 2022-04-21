@@ -73,7 +73,8 @@ function PageAbout() {
                                     </ul>
                                 </section>
                             }
-                        <Button url='contact' btnText="Contact Me" />
+                            
+                        {/* <Button url='contact' btnText="Contact Me" /> */}
                         </section>
                     </div>
                 </section>
