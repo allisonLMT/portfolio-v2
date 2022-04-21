@@ -99,7 +99,7 @@ function PageHome() {
                             </div>
                         </section>
                         <section className={styles.right}>
-                            <div className={classes(styles.imageWrap, styles.overlay)}>
+                            <div className={classes(styles.imageWrap)}>
                                 { restData.acf.cover_image.url &&
                                     <img src={restData.acf.cover_image.url} alt={restData.acf.cover_image.alt} />
                                 }
