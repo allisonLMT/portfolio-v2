@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import styles from '../styles/navMenu.module.scss';
 import classes from 'classnames';
