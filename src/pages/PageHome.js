@@ -15,7 +15,7 @@ import Button from '../components/Button.js';
 
 function PageHome() {
 
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
 
     const restPath = 'https://atredwell.com/wordpress-portfolio-v2/wp-json/wp/v2/pages/10?acf_format=standard';
     const [restData, setData] = useState([])
@@ -24,8 +24,6 @@ function PageHome() {
     const projectsPath = 'https://atredwell.com/wordpress-portfolio/wp-json/wp/v2/portfolio-project?acf_format=standard';
     const [projectsData , setProjects] = useState([])
     const [projectsLoaded, setProjectsStatus] = useState(false)
-   
-
     
     useEffect(() => {
         // Fetch all data (except portfolio)
@@ -77,7 +75,7 @@ function PageHome() {
                 <NavMenu page={'home'}/>
                 <SkipNavContent />
                 <section className='content-wrap' >
-                    <section className={styles.coverWrap}>
+                    <section className={styles.coverWrap} id='top'>
                         <section className={styles.left}>
                             <div className={styles.text}>
                                 <p className={styles.firstLine}>hello, my name is...</p>
