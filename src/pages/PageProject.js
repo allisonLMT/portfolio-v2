@@ -98,14 +98,14 @@ function PageProject( ) {
                                 {/* Role */}
                                 { currentProjObj.acf.role_content &&
                                 <section>
-                                    <h3>Role</h3>
+                                    <h2>Role</h2>
                                     <p>{currentProjObj.acf.role_content}</p>
                                 </section>
                                 }
                                 {/* Languages and Tools */}
                                 { currentProjObj.acf.languages_tools &&
                                 <section>
-                                    <h3>Languages &amp; Tools</h3>
+                                    <h2>Languages &amp; Tools</h2>
                                     <ul>
                                         {currentProjObj.acf.languages_tools.map((oneRow, i) => 
                                             <li key={i}>{oneRow.tool}</li>
@@ -116,7 +116,7 @@ function PageProject( ) {
                                 {/* Requirements */}
                                 { currentProjObj.acf.requirements &&
                                     <section>
-                                        <h3>Requirements</h3>
+                                        <h2>Requirements</h2>
                                         <ul>
                                             {currentProjObj.acf.requirements.map((oneRow, i) => 
                                                 <li key={i}>{oneRow.requirement}</li>

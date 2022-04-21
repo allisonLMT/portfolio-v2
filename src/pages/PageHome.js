@@ -117,9 +117,9 @@ function PageHome() {
                         </section>
                     }
                     {/* Recent Projects */}
-                    <section>
+                    <section className={styles.projects}>
                         <h1>Recent Projects</h1>
-                        <div className={styles.projects}>
+                        <div className={styles.projectCards}>
                             {projectsData.map((eachProject, i) =>
                                 <ProjectCard key={eachProject.id} project={projectsData[i]} />
                             )}
@@ -136,7 +136,7 @@ function PageHome() {
                             <p>{restData.acf.contact_content[1].line}</p>
                             <p>{restData.acf.contact_content[2].line}</p>
                         </a>
-                        <section className={styles.email} onClick={() => { handleToggle() }}>
+                        <section className={styles.email}  onClick={() => { handleToggle() }}>
                             <Clipboard data-clipboard-text="allison.tredwell@gmail.com" >
                                 allison.tredwell@gmail.com
                                 <img src={copy} alt="copy this email address" className={styles.copyEmail}/>
