@@ -42,7 +42,7 @@ function PageHome() {
             if ( response.ok ) {
                 const data = await response.json();
                  //splice to show most recent 2 projects
-                const splicedData = data.splice(0, 2);
+                const splicedData = data.splice(-2);
                 setProjects(splicedData);
                 setProjectsStatus(true);
             } else {
@@ -99,7 +99,7 @@ function PageHome() {
                             </div>
                         </section>
                         <section className={styles.right}>
-                            <div className={classes(styles.imageWrap, styles.overlay)}>
+                            <div className={classes(styles.imageWrap)}>
                                 { restData.acf.cover_image.url &&
                                     <img src={restData.acf.cover_image.url} alt={restData.acf.cover_image.alt} />
                                 }

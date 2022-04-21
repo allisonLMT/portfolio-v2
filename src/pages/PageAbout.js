@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { SkipNavLink, SkipNavContent } from "@reach/skip-nav";
 import "@reach/skip-nav/styles.css";
 import classes from 'classnames';
-import Button from '../components/Button';
+//import Button from '../components/Button';
 import NavMenu from '../components/NavMenu'
 import Footer from '../components/Footer';
 import styles from '../styles/pageAbout.module.scss';
@@ -10,7 +10,7 @@ import styles from '../styles/pageAbout.module.scss';
 
 function PageAbout() {
 
-    const restPath = 'https://atredwell.com/wordpress-portfolio/wp-json/wp/v2/pages/11?acf_format=standard';
+    const restPath = 'https://atredwell.com/wordpress-portfolio-v2/wp-json/wp/v2/pages/10?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
 
@@ -36,10 +36,10 @@ function PageAbout() {
                 <NavMenu page={'about'} />
                 <SkipNavContent />
                 <section className='content-wrap' >
-                    <h1>{restData.title.rendered}</h1>
+                    <h1>About</h1>
                     <div className={styles.aboutWrap}>
-                        {restData.acf.image.url &&
-                            <img src={restData.acf.image.url} alt={restData.acf.image.alt} className={classes(styles.fadeInColor)} />
+                        {restData.acf.cover_image.url &&
+                            <img src={restData.acf.cover_image.url} alt={restData.acf.cover_image.alt} className={classes(styles.fadeInColor)} />
                         }
                         <section className={styles.aboutText}>
                             {/* Intro */}
