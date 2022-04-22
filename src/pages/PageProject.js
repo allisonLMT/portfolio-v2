@@ -124,13 +124,13 @@ function PageProject( ) {
                                         </ul>
                                     </section>
                                 }
-                                {/* Portfolio ID is "45", don't render a link to project on Portfolio page */}
-                                {(id !== "45") && <Button url={currentProjObj.acf.project_url} btnText="Live Project" />}
+                                {/* don't render a link to project on Portfolio page */}
+                                {(currentProjObj.slug !== "portfolio") && <Button url={currentProjObj.acf.project_url} btnText="Live Project" />}
                             </section>
                         </div>
                     </div>  
                     {/* Features */}
-                    { currentProjObj.acf.feature &&    
+                    { (currentProjObj.acf.feature[0].feature_title !== '') &&    
                         <section className={styles.marginWrap}>
                             <h2 className={styles.featureHeader}>Features</h2>
                             <section className={styles.features}>

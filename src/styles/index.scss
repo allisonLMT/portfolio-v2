@@ -18,7 +18,7 @@ body {
 }
 .content-wrap {
   position: relative;
-  margin: 6.25rem auto 0;
+  margin: 5.3125rem auto 0;
   //padding-bottom includes 5.625rem for footer, and 0.625rem for space
   padding-bottom: 6.25rem;
   max-width: 75rem;
@@ -58,4 +58,5 @@ code {
 .loading {
   display: block;
   margin: 40vh auto;
+  border: 1px solid red;
 }
