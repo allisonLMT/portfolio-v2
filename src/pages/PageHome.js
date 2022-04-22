@@ -81,7 +81,6 @@ function PageHome() {
         
     }
 
-
     
     if ( isLoaded && projectsLoaded ) {
         return(
