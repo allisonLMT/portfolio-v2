@@ -15,7 +15,7 @@ function NavMenu( {page} ) {
 
     return (
         <>
-            <div className={styles.navBar}>
+            <div className={styles.navBar} >
                 <HashLink to='/#top' className={styles.siteTitle} onClick={() => { setIsOpen(false) } }>Allison Tredwell</HashLink>
                 <div className={ classes( styles.navBurger, { [styles.open] : isOpen } ) } 
                     onClick={() => { handleToggle() } }>

@@ -9,6 +9,8 @@ import styles from '../styles/pageAbout.module.scss';
 
 function PageAbout() {
 
+    window.scrollTo(0, 0);
+
     const restPath = 'https://atredwell.com/wordpress-portfolio-v2/wp-json/wp/v2/pages/10?acf_format=standard';
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);

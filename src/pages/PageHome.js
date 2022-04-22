@@ -68,8 +68,9 @@ function PageHome() {
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };
-      }, []);
+    }, []);
 
+    // allows scroll back to original position after being clicked
     function handleToggle() {
         window.scrollTo(0, scrollPosition);
         setCopiedStatus(true);
@@ -80,12 +81,16 @@ function PageHome() {
         
     }
 
+
     
     if ( isLoaded && projectsLoaded ) {
         return(
             <div className='page-container' id='top'>
                 <SkipNavLink />
-                <NavMenu page={'home'}/>
+                { (scrollPosition > 2700) ?
+                    <NavMenu page={'contact'} key={scrollPosition}/> :
+                    <NavMenu page={'home'} key={scrollPosition}/>
+                }
                 <SkipNavContent />
                 <section className='content-wrap' >
                     <section className={styles.coverWrap} >
@@ -128,14 +133,14 @@ function PageHome() {
 
 
                     {/* Contact */}
-                    <section className={classes(styles.contactWrap)} id='contact' >
+                    <section className={classes(styles.contactWrap)}  >
                         <h1>Contact</h1>
                         <h2>{restData.acf.contact_content[0].line}</h2>
                         <a href="mailto: allison.tredwell@gmail.com" className={classes(styles.smalltext, styles.accent)}>
                             <p>{restData.acf.contact_content[1].line}</p>
                             <p>{restData.acf.contact_content[2].line}</p>
                         </a>
-                        <section className={styles.email}  onClick={() => { handleToggle() }}>
+                        <section  id='contact' className={styles.email} onClick={() => { handleToggle() }}>
                             <Clipboard data-clipboard-text="allison.tredwell@gmail.com" >
                                 allison.tredwell@gmail.com
                                 <img src={copy} alt="copy this email address" className={styles.copyEmail}/>
