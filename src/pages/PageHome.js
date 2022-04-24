@@ -84,7 +84,7 @@ function PageHome() {
     
     if ( isLoaded && projectsLoaded ) {
         return(
-            <div className='page-container' id='top'>
+            <div className='page-container' id='home'>
                 <SkipNavLink />
                 { (scrollPosition > 2700) ?
                     <NavMenu page={'contact'} key={scrollPosition}/> :

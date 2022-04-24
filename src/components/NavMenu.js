@@ -16,7 +16,7 @@ function NavMenu( {page} ) {
     return (
         <>
             <div className={styles.navBar} >
-                <HashLink to='/#top' className={styles.siteTitle} onClick={() => { setIsOpen(false) } }>Allison Tredwell</HashLink>
+                <HashLink to='/#home' className={styles.siteTitle} onClick={() => { setIsOpen(false) } }>Allison Tredwell</HashLink>
                 <div className={ classes( styles.navBurger, { [styles.open] : isOpen } ) } 
                     onClick={() => { handleToggle() } }>
                     <span></span>
@@ -25,14 +25,14 @@ function NavMenu( {page} ) {
                     <span></span>
                 </div> 
                 <nav className={styles.desktopNav}>
-                    <HashLink to='/#top' className = { (page === 'home') ? styles.active : styles.inactive } >home</HashLink>
+                    <HashLink to='/#home' className = { (page === 'home') ? styles.active : styles.inactive } >home</HashLink>
                     <NavLink to='/about' className = { (page === 'about') ? styles.active : styles.inactive }>about</NavLink>
                     <NavLink to='/portfolio' className = { (page === 'portfolio') ? styles.active : styles.inactive }>portfolio</NavLink>
                     <HashLink to='/#contact' className = { (page === 'contact') ? styles.active : styles.inactive } >contact</HashLink>
                 </nav>
             </div>
             <nav className={ classes( styles.navMenu, { [styles.open] : isOpen }) }>
-                <HashLink to='/#top'>home</HashLink>
+                <HashLink to='/#home'>home</HashLink>
                 <NavLink to='/about'>about</NavLink>
                 <NavLink to='/portfolio' >portfolio</NavLink>
                 <HashLink to='/#contact' >contact</HashLink>
