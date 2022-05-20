@@ -32,10 +32,10 @@ function NavMenu( {page} ) {
                 </nav>
             </div>
             <nav className={ classes( styles.navMenu, { [styles.open] : isOpen }) }>
-                <HashLink to='/#home'>home</HashLink>
-                <NavLink to='/about'>about</NavLink>
-                <NavLink to='/portfolio' >portfolio</NavLink>
-                <HashLink to='/#contact' >contact</HashLink>
+                <HashLink to='/#home' onClick={() => { handleToggle() } }>home</HashLink>
+                <NavLink to='/about' onClick={() => { handleToggle() } }>about</NavLink>
+                <NavLink to='/portfolio' onClick={() => { handleToggle() } }>portfolio</NavLink>
+                <HashLink to='/#contact' onClick={() => { handleToggle() } }>contact</HashLink>
             </nav>
         </>  
     );
