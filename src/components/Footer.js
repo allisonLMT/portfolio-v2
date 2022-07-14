@@ -10,7 +10,7 @@ function Footer( {page} ) {
     return (
         <footer className={styles.footer}  >
             <div className={styles.icons} >
-                <a href="https://www.linkedin.com/in/allison-tredwell-06682b146/">
+                <a href="https://www.linkedin.com/in/allison-tredwell/">
                     <img src={linkedin} alt="LinkedIn icon" />
                 </a>
                 { (page !== 'home') &&
