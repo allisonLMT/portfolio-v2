@@ -22,7 +22,7 @@ function PageAbout() {
             if ( response.ok ) {
                 const data = await response.json();
                 setData(data);
-                setLoadStatus(false);
+                setLoadStatus(true);
             } else {
                 setLoadStatus(false);
             };
