@@ -42,6 +42,10 @@ img.projectCoverImage {
     padding: 1.25rem;
     min-width: 18.75rem;
     max-width: 37.5rem;
+
+    section {
+        padding: 0.1875rem 0;
+    }
 }
 
 .infoWrap {
