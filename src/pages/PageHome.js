@@ -9,6 +9,7 @@ import NavMenu from '../components/NavMenu.js';
 import ProjectCard from '../components/ProjectCard';
 import Footer from '../components/Footer.js';
 import Button from '../components/Button.js';
+import LoadingDots from '../components/LoadingDots.js';
 
 
 
@@ -152,6 +153,7 @@ function PageHome() {
             </div>
         );
     }
-    return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />;
+    //return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />;
+    return <LoadingDots />;
 };
 export default PageHome;
