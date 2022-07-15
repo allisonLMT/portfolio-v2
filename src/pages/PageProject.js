@@ -154,7 +154,7 @@ function PageProject( ) {
             </div>
         ); // end return
     } //end if (isLoaded)
-    return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />
+    return <LoadingDots />;
 };
 
 export default PageProject;

@@ -153,7 +153,6 @@ function PageHome() {
             </div>
         );
     }
-    //return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />;
     return <LoadingDots />;
 };
 export default PageHome;
