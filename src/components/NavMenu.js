@@ -27,14 +27,14 @@ function NavMenu( {page} ) {
                 <nav className={styles.desktopNav}>
                     <HashLink to='/#home' className = { (page === 'home') ? styles.active : styles.inactive } >home</HashLink>
                     <NavLink to='/about' className = { (page === 'about') ? styles.active : styles.inactive }>about</NavLink>
-                    <HashLink to='/portfolio#portfolio' className = { (page === 'portfolio') ? styles.active : styles.inactive }>portfolio</HashLink>
+                    <NavLink to='/portfolio' className = { (page === 'portfolio') ? styles.active : styles.inactive }>portfolio</NavLink>
                     <HashLink to='/#contact' className = { (page === 'contact') ? styles.active : styles.inactive } >contact</HashLink>
                 </nav>
             </div>
             <nav className={ classes( styles.navMenu, { [styles.open] : isOpen }) }>
                 <HashLink to='/#home' onClick={() => { handleToggle() } }>home</HashLink>
                 <NavLink to='/about' onClick={() => { handleToggle() } }>about</NavLink>
-                <HashLink to='/portfolio#portfolio' onClick={() => { handleToggle() } }>portfolio</HashLink>
+                <NavLink to='/portfolio' onClick={() => { handleToggle() } }>portfolio</NavLink>
                 <HashLink to='/#contact' onClick={() => { handleToggle() } }>contact</HashLink>
             </nav>
         </>  
