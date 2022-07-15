@@ -2,16 +2,16 @@
 
 .dots {
     display: block;
-    margin: 0 auto;
+    margin: 40vh auto;
     width: fit-content;
 }
 .dots span {
     display: inline-block;
     vertical-align: middle;
-    width: .6em;
-    height: .6em;
-    margin: .19em;
-    border-radius: .6em;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    margin: 0.3125rem;
+    border-radius: 0.9375rem;
     animation: dots 1s infinite alternate;
 } 
 
@@ -48,12 +48,4 @@
     100% {
       opacity: 1;
     }
-}
-
-.hide {
-    visibility: hidden;
-}
-
-.show {
-    visibility: visible;
 }

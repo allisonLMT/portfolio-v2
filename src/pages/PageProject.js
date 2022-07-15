@@ -9,6 +9,7 @@ import FeatureCard from '../components/FeatureCard';
 import Accordion from '../components/Accordion';
 import PreviousNext from '../components/PreviousNext';
 import Footer from '../components/Footer';
+import LoadingDots from '../components/LoadingDots.js';
 
 
 function PageProject( ) {

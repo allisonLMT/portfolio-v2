@@ -5,6 +5,7 @@ import classes from 'classnames';
 import NavMenu from '../components/NavMenu'
 import Footer from '../components/Footer';
 import styles from '../styles/pageAbout.module.scss';
+import LoadingDots from '../components/LoadingDots.js';
 
 
 function PageAbout() {
@@ -21,7 +22,7 @@ function PageAbout() {
             if ( response.ok ) {
                 const data = await response.json();
                 setData(data);
-                setLoadStatus(true);
+                setLoadStatus(false);
             } else {
                 setLoadStatus(false);
             };
@@ -83,7 +84,8 @@ function PageAbout() {
             </div>
         );
     }
-    return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />
+    //return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />
+    return <LoadingDots />;
 };
 
 export default PageAbout;

@@ -5,6 +5,7 @@ import styles from '../styles/pagePortfolio.module.scss';
 import NavMenu from '../components/NavMenu.js';
 import ProjectCard from '../components/ProjectCard.js';
 import Footer from '../components/Footer.js';
+import LoadingDots from '../components/LoadingDots.js';
 import classes from 'classnames';
 
 
@@ -53,7 +54,8 @@ function PagePortfolio( ) {
             </div>
         );
     }
-    return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />;
+    //return <img src="../loading.gif" alt="Loading" className="loading" id="loading" />;
+    return <LoadingDots />;
 };
 
 export default PagePortfolio;

@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from '../styles/loadingDots.module.scss';
 
-function LoadingDots({ loading }) {
+function LoadingDots() {
 
     return (
         <div className={styles.dots}>
-        <div className={loading ? styles.show : styles.hide}>
             <span></span>
             <span></span>
             <span></span>
@@ -13,7 +12,6 @@ function LoadingDots({ loading }) {
             <span></span>
             <span></span>
             <span></span>
-        </div>
         </div>
     )
 }
