@@ -103,11 +103,11 @@ function PageProject( ) {
                                 </section>
                                 }
                                 {/* Languages and Tools */}
-                                { currentProjObj.acf.languages_tools &&
+                                { currentProjObj.acf.languages_tools_content &&
                                 <section>
                                     <h2>Languages &amp; Tools</h2>
                                     <ul>
-                                        {currentProjObj.acf.languages_tools.map((oneRow, i) => 
+                                        {currentProjObj.acf.languages_tools_content.map((oneRow, i) => 
                                             <li key={i}>{oneRow.tool}</li>
                                         )}
                                     </ul>
