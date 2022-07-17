@@ -1,11 +1,21 @@
 @use '_mixins' as *;
 
-.goHome {
+.notFoundWrap {
+    height: calc(100vh - 11rem);
+}
+
+.notFoundText {
     @include flex-center-vert-hor;
     flex-wrap: wrap;
-    margin-top: 5rem;
-    width: 100%;
+    align-content: center;
+    height: 100%;
+
+    h1, p {
+        width: 100%;
+    }
     a {
+        display: block;
+        margin-top: 3rem;
         text-decoration: underline;
         width: 100%;
     }

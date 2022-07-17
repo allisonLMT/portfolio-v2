@@ -22,6 +22,8 @@ body {
   //padding-bottom includes 5.625rem for footer, and 0.625rem for space
   padding-bottom: 6.25rem;
   max-width: 75rem;
+  min-height: calc(100vh - 11.5rem);
+  
 }
 
 h1 {

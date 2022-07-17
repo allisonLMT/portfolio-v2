@@ -15,10 +15,12 @@ function PageNotFound() {
             <NavMenu />
             <SkipNavContent />
             <section className='content-wrap' >
-                <h1>Page Not Found</h1>
-                <div className={styles.goHome}>
-                    <p>The page you're looking for can't be found.</p>
-                    <Link to='/'>Return to Home</Link>
+                <div className={styles.notFoundWrap}>
+                    <div className={styles.notFoundText}>
+                        <h1>Page Not Found</h1>
+                        <p>The page you're looking for can't be found.</p>
+                        <Link to='/'>Return to Home</Link>
+                    </div>
                 </div>
             </section>
             <Footer />
