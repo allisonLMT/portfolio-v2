@@ -87,7 +87,9 @@ function PageProject( ) {
                     <div className={styles.marginWrap}>
                         <h1>{currentProjObj.title.rendered}</h1>
                         <div className={styles.infoWrap}>
-                            <img src={currentProjObj.acf.cover_image.url} alt={currentProjObj.acf.cover_image.alt} className={styles.projectCoverImage}/>
+                            <div className={styles.imgWrap}>
+                                <img src={currentProjObj.acf.cover_image.url} alt={currentProjObj.acf.cover_image.alt} className={styles.projectCoverImage}/>
+                            </div>
                             <section className={styles.projectInfo}>
                                 { currentProjObj.acf.project_overview_content &&
                                 // Overview
@@ -126,12 +128,14 @@ function PageProject( ) {
                                     </section>
                                 }
                                 {/* don't render a link to project on Portfolio page */}
-                                {(currentProjObj.slug !== "portfolio") && <Button url={currentProjObj.acf.project_url} btnText="Live Project" />}
+                                {((currentProjObj.slug !== "portfolio") && currentProjObj.proj_url) && 
+                                    <Button url={currentProjObj.acf.project_url} btnText="Live Project" />
+                                }
                             </section>
                         </div>
                     </div>  
                     {/* Features */}
-                    { (currentProjObj.acf.feature[0].feature_title !== '') &&    
+                    { (currentProjObj.acf.feature[0].feature_title && currentProjObj.acf.feature[0].feature_title !== '') &&    
                         <section className={styles.marginWrap}>
                             <h2 className={styles.featureHeader}>Features</h2>
                             <section className={styles.features}>

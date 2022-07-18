@@ -5,16 +5,16 @@
 article.card {
     display: flex;
     flex-wrap: wrap;
-    //justify-content: space-evenly;
-    justify-content: center;
+    justify-content: space-evenly;
+    //justify-content: center;
     align-items: center;
     align-content: space-between;
 
     position: relative;
     margin: 0 1.25rem;
-    padding: 40px 0;
+    padding: 2.5rem 0;
     width: 100%;
-    max-width: 1200px;
+    max-width: 75rem;
 
     @media (min-width: 28.125rem) {
         margin: 1rem 2.5rem;
@@ -26,15 +26,14 @@ article.card {
 
 article.card:nth-child(even) {
     flex-direction: row-reverse;
-    @media (min-width: 750px) {
+    @media (min-width: 46.875rem) {
         background-color: $accentGrey;
-        
-        border-radius: 15px; 
+        border-radius: 0.9375rem; 
     }
 
-    .projectInfo {
-        border-radius: 0.4375rem 0 0 0.4375rem;
-    }
+    // .projectInfo {
+    //     border-radius: 0.4375rem 0 0 0.4375rem;
+    // }
    
 }
 
@@ -49,12 +48,12 @@ article.card:nth-child(even) {
         max-width: 100%;
         border-radius: 0.4375rem;
 
-        @media (min-width: 1000px) {
-            width: 500px;
+        @media (min-width: 62.5rem) {
+            width: 31.25rem;
             filter: drop-shadow(0.1875rem 0.1875rem 0.3125rem #44444475);
         }
         @media (min-width: 1100px) {
-            width: 600px;
+            width: 37.5rem;
         }
     }
 }
@@ -65,19 +64,19 @@ article.card:nth-child(even) {
     position: relative;
     z-index: 5;
     text-align: center;
-    max-width: 400px;
+    max-width: 25rem;
 
     h2,
     p {
         padding-left: 0.625rem;
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 62.5rem) {
         justify-content: center;
         padding: 1.875rem 1.5625rem;
         text-align: left;
         //background-color: $accentGrey;
-        border-radius: 0 0.4375rem 0.4375rem 0;
+        //border-radius: 0 0.4375rem 0.4375rem 0;
         //max-width: 600px;
 
         a {
