@@ -42,7 +42,7 @@ function PageHome() {
             if ( response.ok ) {
                 const data = await response.json();
                  //splice to show most recent 2 projects
-                const splicedData = data.splice(-2);
+                const splicedData = data.splice(0, 2);
                 setProjects(splicedData);
                 setProjectsStatus(true);
             } else {
