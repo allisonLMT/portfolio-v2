@@ -77,6 +77,7 @@ function PageProject( ) {
         };
 
         findProject();
+        console.log(currentProjObj.acf.project_url)
 
         return(
             <div className='page-container' >
@@ -127,8 +128,8 @@ function PageProject( ) {
                                         </ul>
                                     </section>
                                 }
-                                {/* don't render a link to project on Portfolio page */}
-                                {((currentProjObj.slug !== "portfolio") && currentProjObj.proj_url) && 
+                                {/* Link to live project */}
+                                { currentProjObj.acf.project_url && 
                                     <Button url={currentProjObj.acf.project_url} btnText="Live Project" />
                                 }
                             </section>
